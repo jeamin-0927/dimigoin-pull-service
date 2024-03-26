@@ -19,7 +19,7 @@ const Login = () => {
       className="w-full h-screen justify-center items-center"
     >
       <Image 
-        src="/public/background.jpg"
+        src="/public/background.webp"
         alt="background"
         className="blur-[16px] opacity-25 select-none object-cover object-center fill"
         fill
