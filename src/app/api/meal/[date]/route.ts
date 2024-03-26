@@ -46,7 +46,7 @@ export const GET = async (
   try{
     const {data}: {data: Meal} = await axios({
       method: "GET",
-      url: `https://디미고급식.com/api/${params.date}`,
+      url: `https://선린급식.com/api/${params.date}`,
     });
 	
     const response: MealResponse = {

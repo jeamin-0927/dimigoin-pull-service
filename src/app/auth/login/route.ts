@@ -11,15 +11,15 @@ import { refresh, sign } from "@/utils/jwt";
 import type { DB_userData, TokenInfo, UserData } from "../type";
 
 export const GET = async (req: Request) => {
-  // 디미고인에서 받은 토큰 가져오기
+  // 선린인에서 받은 토큰 가져오기
   const { searchParams } = new URL(req.url!);
   const token = searchParams.get("token") || "";
 
-  // 디미고인 퍼블릭 키 가져오기
+  // 선린인 퍼블릭 키 가져오기
   const public_key = await axios.get(`${process.env.NEXT_PUBLIC_DIMIGOIN_URI}/auth/public`);
   const public_key_encodes = await jose.importSPKI(public_key.data, "RS256");
 
-  // 디미고인 토큰 디코딩
+  // 선린인 토큰 디코딩
   const decodedToken = await jose.jwtVerify(token, public_key_encodes);
   const data = decodedToken.payload as {
     data: {

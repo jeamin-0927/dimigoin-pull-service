@@ -9,12 +9,12 @@ import RecoilProvider from "@/provider/RecoilProvider";
 import ToastProvider from "@/provider/ToastProvider";
 
 export const metadata: Metadata = {
-  title: "디미고인 풀 서비스 V3",
-  description: "그래그래 드디어 왔다 디미고인 풀 서비스 V3",
+  title: "선린인 풀 서비스 V3",
+  description: "그래그래 드디어 왔다 선린인 풀 서비스 V3",
   openGraph:{
-    title: "디미고인 풀 서비스 V3",
-    siteName: "디미고인 풀 서비스 V3",
-    description: "그래그래 드디어 왔다 디미고인 풀 서비스 V3",
+    title: "선린인 풀 서비스 V3",
+    siteName: "선린인 풀 서비스 V3",
+    description: "그래그래 드디어 왔다 선린인 풀 서비스 V3",
     type: "website",
     url: "https://dimigo.net",
     locale: "ko_KR",

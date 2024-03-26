@@ -12,7 +12,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   
   return {
-    title: `${params.type === "washer" ? "세탁기" : "건조기"} 신청 :: 디미고인 풀 서비스 V3`,
+    title: `${params.type === "washer" ? "세탁기" : "건조기"} 신청 :: 선린인 풀 서비스 V3`,
   };
 }
 

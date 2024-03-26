@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "금요귀가 신청 :: 디미고인 풀 서비스 V3",
+  title: "금요귀가 신청 :: 선린인 풀 서비스 V3",
 };
 
 const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => children;
