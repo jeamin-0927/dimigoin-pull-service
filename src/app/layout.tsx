@@ -8,6 +8,8 @@ import React from "react";
 import RecoilProvider from "@/provider/RecoilProvider";
 import ToastProvider from "@/provider/ToastProvider";
 
+import Alert from "./alert";
+
 export const metadata: Metadata = {
   title: "선린인 풀 서비스 V3",
   description: "그래그래 드디어 왔다 선린인 풀 서비스 V3",
@@ -67,6 +69,7 @@ const RootLayout = async ({
             <main>
               {children}
             </main>
+            <Alert />
           </ToastProvider>
         </RecoilProvider>
         <Analytics />
