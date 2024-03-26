@@ -28,6 +28,10 @@ const loading = (message: ToastContent, options?: ToastOptions) => {
   return toast.loading(message, { ...defaultOptions, ...options });
 };
 
+const info = (message: ToastContent, options?: ToastOptions) => {
+  return toast.info(message, { ...defaultOptions, ...options });
+};
+
 const update = (id: Id, message: ToastContent, type?: TypeOptions, options?: UpdateOptions) => {
   if(type)
     return toast.update(id, { render: message, ...defaultOptions, ...options, type, isLoading: false });
@@ -41,4 +45,5 @@ export const alert = {
   success,
   loading,
   update,
+  info,
 };
