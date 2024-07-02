@@ -11,6 +11,13 @@ export type WakeupData = {
   week: string;
 }
 
+export type WakeupSelected = {
+  title: string;
+  id: string;
+  date: string;
+  dateDiff: string;
+}
+
 export type WakeupDB = WakeupData & {
   _id: string;
 }

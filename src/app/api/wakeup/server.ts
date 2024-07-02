@@ -1,9 +1,11 @@
 "use server";
 
+import moment from "moment/moment";
+
 import { getApplyStartDate } from "@/app/api/stay/utils";
 import { connectToDatabase } from "@/utils/db";
 
-import { WakeupDB, WakeupGET, getToday } from "./utils";
+import { getToday, WakeupDB, WakeupGET, WakeupSelected } from "./utils";
 
 export const getWakeup = async (id: string, gender: string) => {
   const today = getToday();
@@ -47,5 +49,31 @@ export const getWakeup = async (id: string, gender: string) => {
     today: today.format("YYYY-MM-DD"),
     gender: gender,
     week: await getApplyStartDate(),
+  };
+};
+
+export const calcDateDiff = (selected: WakeupSelected) => {
+  moment.tz("Asia/Seoul");
+  const diff = moment(selected.date).diff(moment(), "days")*-1;
+  switch (diff) {
+  case 0: return "오늘";
+  case 1: return "어제";
+  case 2: return "그저께";
+  default:  return `${diff}일 전`;
+  }
+};
+
+export const getSelected = async (gender: string) => {
+  const client = await connectToDatabase();
+  const statesCollection = client.db().collection("states");
+  const data = (await statesCollection.findOne({
+    type: "wakeup_selected"
+  }))?.data[gender];
+
+  if (Object.prototype.hasOwnProperty.call(data, "date") || data.date === undefined || data.date === "") return { id: null };
+
+  return {
+    ...data,
+    dateDiff: calcDateDiff(data)
   };
 };

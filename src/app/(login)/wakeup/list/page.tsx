@@ -1,6 +1,6 @@
 import React from "react";
 
-import { getWakeup } from "@/app/api/wakeup/server";
+import { getSelected, getWakeup } from "@/app/api/wakeup/server";
 import { getUserInfo } from "@/utils/server";
 
 import ListContent from "./ListContent";
@@ -8,6 +8,7 @@ import ListContent from "./ListContent";
 const WakeupListPage = async () => {
   const initialUserInfo = await getUserInfo();
   const initialData = await getWakeup(initialUserInfo.id, initialUserInfo.gender);
+  const wakeupSelected = await getSelected(initialUserInfo.gender);
 
   return (
     <ListContent
@@ -17,6 +18,7 @@ const WakeupListPage = async () => {
         today: initialData.today,
         gender: initialData.gender as unknown as "male" | "female",
         week: initialData.week,
+        selected: wakeupSelected
       }}
     />
   );

@@ -83,6 +83,21 @@ const states = [
       "2": false,
       "3": false
     }
+  },
+  {
+    "type": "wakeup_selected",
+    "data": {
+      "male": {
+        "title": "",
+        "id": "",
+        "date": ""
+      },
+      "female": {
+        "title": "",
+        "id": "",
+        "date": ""
+      }
+    }
   }
 ];
 
